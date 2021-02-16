@@ -11,5 +11,5 @@
     const DBDRIVE = 'mysql';
     const DBHOST = 'localhost';
     const DBNAME = 'u765433036_meidasapi';
-    const DBUSER = 'u765433036_ftj';
+    const DBUSER = 'u765433036_u765433036_ftj';
     const DBPASS = 'Di@101133';
