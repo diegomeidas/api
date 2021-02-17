@@ -9,9 +9,9 @@
 
             $user = User::selectUser($_POST['email'], $_POST['password']);
             
-            /* if($user){
+            if($user){
                 return $user["email"];
-            } */
+            }
 
             /* if ($_POST['email'] == 'teste@gmail.com' && $_POST['password'] == '123') { */
             if ($user["email"] == "diegomeidas@hotmail.com" && $user["password"] == "101133") {
