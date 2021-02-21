@@ -1,6 +1,5 @@
 <?php
 	namespace Api\Http\Controllers;
-
 	use Api\Http\Models\User;
 
 	class UsersController {
