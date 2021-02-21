@@ -9,12 +9,9 @@
 
             $user = User::selectUser($_POST['email'], $_POST['password']);
             
-            if($user){
-                return $user["email"];
-            }
+            /* if ($_POST['email'] == 'teste@gmail.com' && $_POST['password'] == '123') { */   
+            if ($user['email'] == $_POST['email'] && $user['password'] == $_POST['password']) {
 
-            /* if ($_POST['email'] == 'teste@gmail.com' && $_POST['password'] == '123') { */
-            if ($user["email"] == "diegomeidas@hotmail.com" && $user["password"] == "101133") {
                 //Header Token
                 $header = [
                     'typ' => 'JWT',
@@ -23,8 +20,8 @@
 
                 //Payload - Content
                 $payload = [
-                    'name' => 'Rafael Capoani',
-                    'email' => $_POST['email'],
+                    'name' => $user['name'],
+                    'email' => $user['email'],
                 ];
 
                 //JSON
@@ -49,7 +46,7 @@
 
         }
 
-        public static function checkAuth()
+        public static function checkToken()
         {
             $http_header = apache_request_headers();
 
