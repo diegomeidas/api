@@ -18,7 +18,7 @@
 		public function get($id = null) 
         {
 			
-			if (AuthController::checkAuth()) {
+			if (AuthController::checkToken()) {
 				
 				if ($id) {
 					return User::select($id);
