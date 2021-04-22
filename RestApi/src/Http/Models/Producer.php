@@ -50,7 +50,7 @@
             }
         }
 
-        public static function selectAll() {
+/*         public static function selectAll() {
             $connPdo = new \PDO(DBDRIVE.': host='.DBHOST.'; dbname='.DBNAME, DBUSER, DBPASS);
 
             $sql = 'SELECT * FROM '.self::$table;
@@ -63,7 +63,7 @@
                 throw new \Exception("Nenhum usuário encontrado!");
             }
         }
-
+ */
         public static function insert($data)
         {
             var_dump($data);exit;
