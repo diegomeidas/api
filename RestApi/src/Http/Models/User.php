@@ -8,7 +8,7 @@
         public static function select(int $id) {
             $connPdo = new \PDO(DBDRIVE.': host='.DBHOST.'; dbname='.DBNAME, DBUSER, DBPASS);
 
-            $sql = 'SELECT * FROM '.self::$table.' WHERE id = :id';
+            $sql = 'SELECT * FROM '.self::$table.' WHERE id_user = :id';
             $stmt = $connPdo->prepare($sql);
             $stmt->bindValue(':id', $id);
             $stmt->execute();
@@ -23,7 +23,7 @@
         public static function selectUser($email, $password) {
             $connPdo = new \PDO(DBDRIVE.': host='.DBHOST.'; dbname='.DBNAME, DBUSER, DBPASS);
 
-            $sql = 'SELECT * FROM '.self::$table.' WHERE email = :email AND password = :password';
+            $sql = 'SELECT * FROM '.self::$table.' WHERE email_user = :email AND password_user = :password';
             $stmt = $connPdo->prepare($sql);
             $stmt->bindValue(':email', $email);
             $stmt->bindValue(':password', $password);
@@ -32,7 +32,7 @@
             if ($stmt->rowCount() > 0) {
                 return $stmt->fetch(\PDO::FETCH_ASSOC);
             } else {
-                throw new \Exception("Nenhum usuário encontrado 222 !");
+                throw new \Exception("Nenhum usuário encontrado!");
             }
         }
 
