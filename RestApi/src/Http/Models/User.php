@@ -32,7 +32,7 @@
             if ($stmt->rowCount() > 0) {
                 return $stmt->fetch(\PDO::FETCH_ASSOC);
             } else {
-                throw new \Exception("Nenhum usuário encontrado!");
+                throw new \Exception("Nenhum usuário encontrado 222 !");
             }
         }
 
