@@ -10,7 +10,7 @@
             $user = User::selectUser($_POST['email'], $_POST['password']);
             
             /* if ($_POST['email'] == 'teste@gmail.com' && $_POST['password'] == '123') { */   
-            if ($user['email'] == $_POST['email'] && $user['password'] == $_POST['password']) {
+            if ($user['email_user'] == $_POST['email'] && $user['password_user'] == $_POST['password']) {
 
                 //Header Token
                 $header = [
