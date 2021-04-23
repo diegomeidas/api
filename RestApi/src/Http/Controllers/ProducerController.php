@@ -10,7 +10,7 @@
 			if (AuthController::checkToken()) {
 				
                 return Producer::selectAll();
-                
+
 			}
 			
 			throw new \Exception('Não autenticado');
