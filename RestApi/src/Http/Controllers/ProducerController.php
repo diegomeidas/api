@@ -7,11 +7,11 @@
         public function getAll() 
         {
 			
-			if (AuthController::checkToken()) {
+			//if (AuthController::checkToken()) {
 				
                 return "ERRRRRO";//Producer::selectAll();
 
-			}
+			//}
 			
 			throw new \Exception('Não autenticado');
             
