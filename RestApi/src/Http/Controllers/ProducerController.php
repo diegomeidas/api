@@ -9,7 +9,7 @@
 			
 			//if (AuthController::checkToken()) {
 				
-                return "ERRRRRO";//Producer::selectAll();
+                return Producer::selectAll();
 
 			//}
 			
