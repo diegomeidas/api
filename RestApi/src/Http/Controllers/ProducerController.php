@@ -1,6 +1,7 @@
 <?php
     namespace Api\Http\Controllers;
     use Api\Http\Models\User;
+    use Api\Http\Models\Producer;
     
     class ProducerController {
 
