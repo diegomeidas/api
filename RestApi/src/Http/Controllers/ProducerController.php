@@ -8,11 +8,11 @@
         public function getAll() 
         {
 			
-			//if (AuthController::checkToken()) {
+			if (AuthController::checkToken()) {
 				
                 return Producer::selectAll();
 
-			//}
+			}
 			
 			throw new \Exception('Não autenticado');
             
@@ -24,9 +24,9 @@
 			if (AuthController::checkToken()) {
 				
 				if ($id) {
-					return Barber::select($id);
+					return Producer::select($id);
 				} else {
-					return Barber::selectAll();
+					return Producer::selectAll();
 				}
 			}
 			
