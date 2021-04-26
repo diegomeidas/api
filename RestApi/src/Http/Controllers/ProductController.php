@@ -2,13 +2,12 @@
     namespace Api\Http\Controllers;
     use Api\Http\Models\User;
     use Api\Http\Models\Product;
-
-    $id_producer = isset($_GET['producerId']) ? $_GET['producerId'] : "";
     
     class ProductController {        
 
         public function getAll() 
         {
+            $id_producer = isset($_GET['producerId']) ? $_GET['producerId'] : "";
 			
 			if (AuthController::checkToken()) {
 				
