@@ -8,7 +8,7 @@
         public static function selectAll($id_producer) {
             $connPdo = new \PDO(DBDRIVE.': host='.DBHOST.'; dbname='.DBNAME, DBUSER, DBPASS);
 
-            $sql = 'SELECT * FROM '.self::$table.'WHERE id_producer = :producer';
+            $sql = 'SELECT * FROM '.self::$table.' WHERE id_producer = :producer';
             $stmt = $connPdo->prepare($sql);
             $stmt->bindValue(':producer', $id_producer);
             $stmt->execute();
@@ -16,7 +16,7 @@
             if ($stmt->rowCount() > 0) {
                 return $stmt->fetchAll(\PDO::FETCH_ASSOC);
             } else {
-                throw new \Exception("Nenhum fornecedor encontrado!");
+                throw new \Exception("Nenhum produto encontrado!");
             }
         }
 
