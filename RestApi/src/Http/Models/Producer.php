@@ -13,7 +13,7 @@
             $stmt->execute();
 
             if ($stmt->rowCount() > 0) {
-                return $stmt->fetch(\PDO::FETCH_ASSOC);
+                return $stmt->fetchAll(\PDO::FETCH_ASSOC);
             } else {
                 throw new \Exception("Nenhum fornecedor encontrado!");
             }
