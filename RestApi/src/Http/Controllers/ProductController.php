@@ -7,16 +7,20 @@
 
         public function getAll() 
         {
-            $id_producer = isset($_GET['producerId']) ? $_GET['producerId'] : "";
-			
-			if (AuthController::checkToken()) {
-				
+            $id_producer = isset($_GET['producerId']) ? $_GET['producerId'] : "";			
+			if (AuthController::checkToken()) {				
                 return Product::selectAll($id_producer);
+			}			
+			throw new \Exception('Não autenticado');            
+        }
 
-			}
-			
-			throw new \Exception('Não autenticado');
-            
+        public function getHighlights() 
+        {
+            $id_producer = isset($_GET['producerId']) ? $_GET['producerId'] : "";			
+			if (AuthController::checkToken()) {				
+                return Product::selectHighlights($id_producer);
+			}			
+			throw new \Exception('Não autenticado');            
         }
 
         public function get($id = null) 
