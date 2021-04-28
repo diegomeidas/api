@@ -4,6 +4,7 @@
     class Product
     {
         private static $table = 'tb_product';
+        private static $highlight = 'tb_product_highlight';
 
         public static function selectAll($id_producer) {
             $connPdo = new \PDO(DBDRIVE.': host='.DBHOST.'; dbname='.DBNAME, DBUSER, DBPASS);
@@ -17,6 +18,21 @@
                 return $stmt->fetchAll(\PDO::FETCH_ASSOC);
             } else {
                 throw new \Exception("Nenhum produto encontrado!");
+            }
+        }
+
+        public static function selectHighlights($id_producer) {
+            $connPdo = new \PDO(DBDRIVE.': host='.DBHOST.'; dbname='.DBNAME, DBUSER, DBPASS);
+
+            $sql = 'SELECT * FROM '.self::$highlight.' WHERE id_producer = :producer';
+            $stmt = $connPdo->prepare($sql);
+            $stmt->bindValue(':producer', $id_producer);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+            } else {
+                throw new \Exception("Nenhum destaque encontrado!");
             }
         }
 
